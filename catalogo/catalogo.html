@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="../db.js"></script>
+    <script src="scriptFiltros.js"></script>
+    <title>Parentree - Catálogo</title>
+    <link rel="shortcut icon" href="../imagens/icone.png" />
+</head>
+
+<body>
+    <header>
+        <div id="cabecalhoPagina">
+            <a href="../catalogo/catalogo.html"><img class="logoParentree" src="../imagens/parentreelogobranca.png" width="94" alt="Logo da Parentree"></a>
+            <h1 class="tituloPagina"> PARENTREE </h1>
+            <h2 class="menu-direita"> MENU </h2>
+            <!-- Menu hamburguer-->
+            <input id="menu-hamburguer" type="checkbox">
+
+            <label for="menu-hamburguer">
+                <div class="menu-h">
+                    <span class="hamburguer"></span>
+                </div>
+            </label>
+            <div class="opcoesMenu">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../minhasPlantas/minhasPlantas.html">Minhas Plantas</a></li>
+                    <li><a href="../catalogo/catalogo.html">Catálogo</a></li>
+                    <li><a href="../relatoCultivo/relatoCultivo.html">Relato de cultivo</a></li>
+                    <li><a href="#">Configurações</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Fim menu hamburguer -->
+        </nav>
+
+    </header>
+
+
+    <main>
+        <div class="barraLateral">
+            <!--Barra da esquerda que contem os filtros de busca-->
+            <div class="filtroLateral" id="filtroTipoPlanta">
+                <h3 class="tituloFiltro">Tipo:</h3>
+
+                <ul class="listaFiltroLateral" id="listaFiltrosTipoPlanta">
+                    <li><input type="checkbox" name="Cactos" class="checkboxFiltros filtroCategoria"><img src="../imagens/iconeCacto.png" alt="Icone Cactos" width="10"> Cactos</li>
+                    <li><input type="checkbox" name="Suculentas" class="checkboxFiltros filtroCategoria"><img src="../imagens/iconeSuculenta.png" alt="Icone Suculentas" width="10"> Suculentas</li>
+                    <li><input type="checkbox" name="Flores" class="checkboxFiltros filtroCategoria"><img src="../imagens/iconeFlores.png" alt="xd" width="10"> Flores</li>
+                    <li><input type="checkbox" name="Ornamentais" class="checkboxFiltros filtroCategoria"><img src="../imagens/iconeOrnamentais.png" alt="xd" width="10"> Plantas
+                        Ornamentais</li>
+                </ul>
+            </div>
+
+            <div class="filtroLateral" id="filtroLuz">
+                <h3 class="tituloFiltro">Luz:</h3>
+
+                <ul class="listaFiltroLateral" id="listaFiltroLuz">
+                    <li><input type="checkbox" name="Sol" class="checkboxFiltros filtroSol"><img src="../imagens/iconeSol.png" alt="Icone Sol" width="12"> Sol </li>
+                    <li><input type="checkbox" name="Meia Luz" class="checkboxFiltros filtroSol"><img src="../imagens/iconeMeiaLuz.png" alt="Icone Meia Luz" width="12"> Meia Luz </li>
+                    <li><input type="checkbox" name="Sombra" class="checkboxFiltros filtroSol"><img src="../imagens/iconeSombra.png" alt="Icone Sombra" width="12"> Sombra </li>
+                </ul>
+            </div>
+
+            <div class="filtroLateral" id="filtroAgua">
+                <h3 class="tituloFiltro">Água:</h3>
+
+                <ul class="listaFiltroLateral" id="listaFiltroAgua">
+                    <li><input type="checkbox" name="Muita Agua" class="checkboxFiltros filtroAgua"><img src="../imagens/iconeMuitaAgua.png" alt="Icone Muita Água" width="12"> Muita água </li>
+                    <li><input type="checkbox" name="Pouca Agua" class="checkboxFiltros filtroAgua"><img src="../imagens/iconePoucaAgua.png" alt="Icone Pouca Água" width="12"> Pouca Água </li>
+                </ul>
+            </div>
+            <div id="divBotaoFiltro">
+                <button id="botaoAcionaFiltro" onclick="comparaFiltroDB()">Filtrar</button>
+            </div>
+        </div>
+
+        <div id="catalogoPlantas"></div>
+
+    </main>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
